@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mariadb:10.3.23
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+      - db-conf:/etc/mysql
+
+volumes:
+  db-data:
+  db-conf:
